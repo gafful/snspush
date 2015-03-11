@@ -108,14 +108,47 @@ public class AmazonSNSClientWrapper {
 			Map<Platform, Map<String, MessageAttributeValue>> attrsMap) {
 		// Create Platform Application. This corresponds to an app on a
 		// platform.
-		CreatePlatformApplicationResult platformApplicationResult = createPlatformApplication(
-				applicationName, platform, principal, credential);
-		System.out.println(platformApplicationResult);
+//		CreatePlatformApplicationResult platformApplicationResult = createPlatformApplication(
+//				applicationName, platform, principal, credential);
+//		System.out.println(platformApplicationResult);
 
 		// The Platform Application Arn can be used to uniquely identify the
 		// Platform Application.
-		String platformApplicationArn = platformApplicationResult
-				.getPlatformApplicationArn();
+//		String platformApplicationArn = platformApplicationResult
+//				.getPlatformApplicationArn();
+
+		String platformApplicationArn = "arn:aws:sns:us-east-1:856247355946:app/GCM/testiWalletPush";
+
+		// Create an Endpoint. This corresponds to an app on a device.
+		CreatePlatformEndpointResult platformEndpointResult = createPlatformEndpoint(
+				platform,
+				"CustomData - Useful to store endpoint specific data",
+				platformToken, platformApplicationArn);
+		System.out.println(platformEndpointResult);
+
+		// Publish a push notification to an Endpoint.
+		PublishResult publishResult = publish(
+				platformEndpointResult.getEndpointArn(), platform, attrsMap);
+		System.out.println("Published! \n{MessageId="
+				+ publishResult.getMessageId() + "}");
+		// Delete the Platform Application since we will no longer be using it.
+//		deletePlatformApplication(platformApplicationArn);
+	}
+
+
+
+	public void createPlatformEndpointResult(Platform platform, String platformApplicationArn, String platformToken,
+											 Map<Platform, Map<String, MessageAttributeValue>> attrsMap) {
+		// Create Platform Application. This corresponds to an app on a
+		// platform.
+//		CreatePlatformApplicationResult platformApplicationResult = createPlatformApplication(
+//				applicationName, platform, principal, credential);
+//		System.out.println(platformApplicationResult);
+//
+//		// The Platform Application Arn can be used to uniquely identify the
+//		// Platform Application.
+//		String platformApplicationArn = platformApplicationResult
+//				.getPlatformApplicationArn();
 
 		// Create an Endpoint. This corresponds to an app on a device.
 		CreatePlatformEndpointResult platformEndpointResult = createPlatformEndpoint(

@@ -49,12 +49,24 @@ public class SNSMobilePush {
 		// also change the notification payload as per your preferences using
 		// the method
 		// com.amazonaws.sns.samples.tools.SampleMessageGenerator.getSampleAndroidMessage()
-		String serverAPIKey = "AIzaSyBzguLyK211pufVy0PAm7sgxwTWrzct3Rs";
-		String applicationName = "GCM/testiWalletPush";
-		String registrationId = "APA91bHQKK2KYSydn32ecdapWC2LeAFTjLFawBKEmQA815UaVYpdTmciRdY-Uzm51WHeiRith0D5yfSBT9MHj3rM9n9Lop1-5r91Ynzzh3XWzzoxv7A2yQJMq-RFfAqL7RnoJIMb0SoRXwaOMsRoSmtbXQrgfoV_6ll2_Rv00XxRafL_0Gp6g_8";
+		String serverAPIKey = "";
+		String applicationName = "testiWalletPush";
+//		String registrationId = "APA91bHQKK2KYSydn32ecdapWC2LeAFTjLFawBKEmQA815UaVYpdTmciRdY-Uzm51WHeiRith0D5yfSBT9MHj3rM9n9Lop1-5r91Ynzzh3XWzzoxv7A2yQJMq-RFfAqL7RnoJIMb0SoRXwaOMsRoSmtbXQrgfoV_6ll2_Rv00XxRafL_0Gp6g_8";
+		String registrationId = "APA91bHJ-2NKkWZRpaRNl1UbvTEQ8GEeREPbHGzQkkw3JYCPPHyEUdh5c_Uul7fU97Xo2EA0iiBjxS9lj_2qzBWnhTiFQ7HjyxfqetmiRwp4_XDAMBgJ3ubbQNRLDv-EavKR48LhIbcJF4GMOdVYWZYsKJalbUTj5ult1qXmrVsPpvFuivzHtJc";
 		snsClientWrapper.demoNotification(Platform.GCM, "", serverAPIKey,
 				registrationId, applicationName, attributesMap);
 	}
+
+//	public void demoAndroidAppNotification2() {
+//		// TODO: Please fill in following values for your application. You can
+//		// also change the notification payload as per your preferences using
+//		// the method
+//		// com.amazonaws.sns.samples.tools.SampleMessageGenerator.getSampleAndroidMessage()
+//		String serverAPIKey = "AIzaSyBzguLyK211pufVy0PAm7sgxwTWrzct3Rs";
+//		String applicationName = "GCM/testiWalletPush";
+//		String registrationId = "APA91bHQKK2KYSydn32ecdapWC2LeAFTjLFawBKEmQA815UaVYpdTmciRdY-Uzm51WHeiRith0D5yfSBT9MHj3rM9n9Lop1-5r91Ynzzh3XWzzoxv7A2yQJMq-RFfAqL7RnoJIMb0SoRXwaOMsRoSmtbXQrgfoV_6ll2_Rv00XxRafL_0Gp6g_8";
+//		snsClientWrapper.createPlatformEndpointResult(Platform.GCM, "", registrationId, attributesMap);
+//	}
 
 	public void demoKindleAppNotification() {
 		// TODO: Please fill in following values for your application. You can
